@@ -83,7 +83,7 @@ function draw() {
 	background(40);
 
 	for (p = objects.length - 1; p >= 0; p--) { if (objects[p].collided || objects[p].position.x < -windowWidth || objects[p].position.x > 2 * windowWidth || objects[p].position.y < -windowHeight || objects[p].position.x > 2 * windowHeight)  { objects.splice(p, 1) } }
-	if (Math.random() < SPAWN_CHANCE && objects.length < MAX_OBJECTS) { objects.push(new Object(Math.random() * (MAX_OBJECT_RADIUS - MIN_OBJECT_RADIUS - 20) + MIN_OBJECT_RADIUS, Math.random() * windowWidth, Math.random() * windowHeight, false)) }
+	if (Math.random() < SPAWN_CHANCE && objects.length < MAX_OBJECTS && document.getElementById("spawncheckbox").checked) { objects.push(new Object(Math.random() * (MAX_OBJECT_RADIUS - MIN_OBJECT_RADIUS - 20) + MIN_OBJECT_RADIUS, Math.random() * windowWidth, Math.random() * windowHeight, false)) }
 
 	for (i = 0; i < objects.length; i++) {
 		forceSum = createVector(0, 0);
